@@ -1,0 +1,593 @@
+{
+  "meta": {
+    "format": "httpie",
+    "version": "1.0.0",
+    "contentType": "workspace",
+    "schema": "https://github.com/httpie/schema/blob/main/versions/1.0.0/schema.json",
+    "docs": "https://httpie.io/docs/desktop/export"
+  },
+  "entry": {
+    "id": "trabajo-final-nube-moto",
+    "name": "Trabajo Final Nube - AWS con Moto",
+    "icon": {
+      "name": "cloud",
+      "color": "blue"
+    },
+    "collections": [
+      {
+        "id": "casos-de-uso",
+        "name": "Casos de uso (16 llamadas)",
+        "icon": {
+          "name": "database",
+          "color": "green"
+        },
+        "auth": {
+          "type": "none"
+        },
+        "requests": [
+          {
+            "id": "caso-01",
+            "name": "1. Ver el panel web de Moto (esperado: 200)",
+            "url": "http://localhost:4566/moto-api",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "text/html",
+                "enabled": true
+              }
+            ],
+            "queryParams": [],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "none"
+            }
+          },
+          {
+            "id": "caso-02",
+            "name": "2. Ver el estado interno de Moto (esperado: 200)",
+            "url": "http://localhost:4566/moto-api/data.json",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "queryParams": [],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "none"
+            }
+          },
+          {
+            "id": "caso-03",
+            "name": "3. ADMIN: identidad (debe ser user/admin) (esperado: 200)",
+            "url": "http://localhost:4566/",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded; charset=utf-8",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=AKIAQAAAAAAAB4YMYIV5/20260101/us-east-1/sts/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=cf9ffac5d8764a416133474af1315e6b1dbdd4f895ed906d58d633b95221645b",
+                "enabled": true
+              }
+            ],
+            "queryParams": [],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "text",
+              "text": {
+                "format": "text/plain",
+                "value": "Action=GetCallerIdentity&Version=2011-06-15"
+              }
+            }
+          },
+          {
+            "id": "caso-04",
+            "name": "4. ADMIN: listar roles (RolLector y RolEditor) (esperado: 200)",
+            "url": "http://localhost:4566/",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded; charset=utf-8",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=AKIAQAAAAAAAB4YMYIV5/20260101/us-east-1/iam/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=c9bc2c25d685ffba2c89b99be3f570c00711c9035d100d245f9e30d7bccd8fc6",
+                "enabled": true
+              }
+            ],
+            "queryParams": [],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "text",
+              "text": {
+                "format": "text/plain",
+                "value": "Action=ListRoles&Version=2010-05-08"
+              }
+            }
+          },
+          {
+            "id": "caso-05",
+            "name": "5. ADMIN: politicas del RolLector (SoloLectura) (esperado: 200)",
+            "url": "http://localhost:4566/",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded; charset=utf-8",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=AKIAQAAAAAAAB4YMYIV5/20260101/us-east-1/iam/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=10c5dd7a10b6f69fc83ee9b474167ceac46f467d474a0eba0721d507d936ac23",
+                "enabled": true
+              }
+            ],
+            "queryParams": [],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "text",
+              "text": {
+                "format": "text/plain",
+                "value": "Action=ListRolePolicies&Version=2010-05-08&RoleName=RolLector"
+              }
+            }
+          },
+          {
+            "id": "caso-06",
+            "name": "6. ADMIN: politicas del RolEditor (LecturaEscritura) (esperado: 200)",
+            "url": "http://localhost:4566/",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded; charset=utf-8",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=AKIAQAAAAAAAB4YMYIV5/20260101/us-east-1/iam/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature=00d3191d2306b990a26a18e1a5367a92b3de0e0a9984c0d412ddfe72c635ed4a",
+                "enabled": true
+              }
+            ],
+            "queryParams": [],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "text",
+              "text": {
+                "format": "text/plain",
+                "value": "Action=ListRolePolicies&Version=2010-05-08&RoleName=RolEditor"
+              }
+            }
+          },
+          {
+            "id": "caso-07",
+            "name": "7. LECTOR: identidad asumida via STS (esperado: 200)",
+            "url": "http://localhost:4566/",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded; charset=utf-8",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": "FQoGZXIvYXdzEBYaDvCsz98AgIXjjAjuRLKx6Rwsx77BRGSgykOFAia54Z7ea1b+7fXe2HAcF9VfoF37e5ICWMgJ7wnLzkcjWSXiNpekRkH1hTFcDHoO1b2h07iWdog3BcAaQKm6ktNYlhujGtasoZq+vgoA+mTFhyPmeNk0Ddmf8dIxC0h6Hz3heOalLhqGcAnzor2Ev8ysLjcWQcwUx5CgL6OD+QxfHg1/68lsUotg38RWY+H/wk350+JtBFfy/oL0+XzgCMLc28l3LzumFQoLjUEe7j8RFp8sAj/1L9NfhVax+qrR2xd8z1JCJGfQBo1J10wtkanQNoWKhIV4O5PzpskaU1tw/ts=",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=ASIAQAAAAAAACTE6MUCC/20260101/us-east-1/sts/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=649aec77f9e19367f319eaadad0c37d5d76e897ad6ace53e3edba5810b5939b6",
+                "enabled": true
+              }
+            ],
+            "queryParams": [],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "text",
+              "text": {
+                "format": "text/plain",
+                "value": "Action=GetCallerIdentity&Version=2011-06-15"
+              }
+            }
+          },
+          {
+            "id": "caso-08",
+            "name": "8. LECTOR: listar el bucket (PERMITIDO) (esperado: 200)",
+            "url": "http://localhost:4566/evidencias-ucc",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": "FQoGZXIvYXdzEBYaDvCsz98AgIXjjAjuRLKx6Rwsx77BRGSgykOFAia54Z7ea1b+7fXe2HAcF9VfoF37e5ICWMgJ7wnLzkcjWSXiNpekRkH1hTFcDHoO1b2h07iWdog3BcAaQKm6ktNYlhujGtasoZq+vgoA+mTFhyPmeNk0Ddmf8dIxC0h6Hz3heOalLhqGcAnzor2Ev8ysLjcWQcwUx5CgL6OD+QxfHg1/68lsUotg38RWY+H/wk350+JtBFfy/oL0+XzgCMLc28l3LzumFQoLjUEe7j8RFp8sAj/1L9NfhVax+qrR2xd8z1JCJGfQBo1J10wtkanQNoWKhIV4O5PzpskaU1tw/ts=",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Content-SHA256",
+                "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=ASIAQAAAAAAACTE6MUCC/20260101/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=3469fb748ad6c2384422a7b4a1402a9f221b34865d41521d4838666799bfa599",
+                "enabled": true
+              }
+            ],
+            "queryParams": [
+              {
+                "name": "list-type",
+                "value": "2",
+                "enabled": true
+              }
+            ],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "none"
+            }
+          },
+          {
+            "id": "caso-09",
+            "name": "9. LECTOR: leer archivo_lectura.txt (PERMITIDO) (esperado: 200)",
+            "url": "http://localhost:4566/evidencias-ucc/archivo_lectura.txt",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": "FQoGZXIvYXdzEBYaDvCsz98AgIXjjAjuRLKx6Rwsx77BRGSgykOFAia54Z7ea1b+7fXe2HAcF9VfoF37e5ICWMgJ7wnLzkcjWSXiNpekRkH1hTFcDHoO1b2h07iWdog3BcAaQKm6ktNYlhujGtasoZq+vgoA+mTFhyPmeNk0Ddmf8dIxC0h6Hz3heOalLhqGcAnzor2Ev8ysLjcWQcwUx5CgL6OD+QxfHg1/68lsUotg38RWY+H/wk350+JtBFfy/oL0+XzgCMLc28l3LzumFQoLjUEe7j8RFp8sAj/1L9NfhVax+qrR2xd8z1JCJGfQBo1J10wtkanQNoWKhIV4O5PzpskaU1tw/ts=",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Content-SHA256",
+                "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=ASIAQAAAAAAACTE6MUCC/20260101/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=e6f9bd11df5575f4d195606081be66e1d43a77faf2473a0a079bfb6b47f74602",
+                "enabled": true
+              }
+            ],
+            "queryParams": [],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "none"
+            }
+          },
+          {
+            "id": "caso-10",
+            "name": "10. LECTOR: subir prueba_http_lector.txt (DENEGADO -> 403) (esperado: 403)",
+            "url": "http://localhost:4566/evidencias-ucc/prueba_http_lector.txt",
+            "method": "PUT",
+            "headers": [
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": "FQoGZXIvYXdzEBYaDvCsz98AgIXjjAjuRLKx6Rwsx77BRGSgykOFAia54Z7ea1b+7fXe2HAcF9VfoF37e5ICWMgJ7wnLzkcjWSXiNpekRkH1hTFcDHoO1b2h07iWdog3BcAaQKm6ktNYlhujGtasoZq+vgoA+mTFhyPmeNk0Ddmf8dIxC0h6Hz3heOalLhqGcAnzor2Ev8ysLjcWQcwUx5CgL6OD+QxfHg1/68lsUotg38RWY+H/wk350+JtBFfy/oL0+XzgCMLc28l3LzumFQoLjUEe7j8RFp8sAj/1L9NfhVax+qrR2xd8z1JCJGfQBo1J10wtkanQNoWKhIV4O5PzpskaU1tw/ts=",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Content-SHA256",
+                "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=ASIAQAAAAAAACTE6MUCC/20260101/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=2d20d32e4424589fb5cb06784a0395f613a597d53dad400fe4fad2f8c9a4f6fb",
+                "enabled": true
+              }
+            ],
+            "queryParams": [],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "none"
+            }
+          },
+          {
+            "id": "caso-11",
+            "name": "11. EDITOR: identidad asumida via STS (esperado: 200)",
+            "url": "http://localhost:4566/",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded; charset=utf-8",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": "FQoGZXIvYXdzEBYaDELjxk2P2izYv25mkq7orcPZLB8esuF9lfPh7B9XfxhBmutwTVRHpTF4U035C9K4FlG6NAQeUB6a/3BPJM01c/4fSQG8bdQEIXo4pKdAPcH4uwkDzZcmhHFXLTEKs29Kuh/olgJwkpzyxGNVLfJJ2+aKI9ZYXBiLqjT0gGShtoB26lI1hs5+moSB4wcQaIcd5kJarcZh/Iq/+dlIE00JhqtRr0I45oWJQwugrVXfqWGFGcFZ/xqIdbPwKMB+XD4w7fHdQoPHZMMu9ixDRZEgxVcOAGWqlPDi/GHzRBDlc5sW/mBC1AaX0dd4h8QdMaDpVob2KTAWb1PHavy34gQ=",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=ASIAQAAAAAAAL34JQVOD/20260101/us-east-1/sts/aws4_request, SignedHeaders=content-type;host;x-amz-date;x-amz-security-token, Signature=402ff01c4d82fe42b09a9c0a761b070df17b12dba95acf9ea57608ddf3d195b0",
+                "enabled": true
+              }
+            ],
+            "queryParams": [],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "text",
+              "text": {
+                "format": "text/plain",
+                "value": "Action=GetCallerIdentity&Version=2011-06-15"
+              }
+            }
+          },
+          {
+            "id": "caso-12",
+            "name": "12. EDITOR: listar el bucket (PERMITIDO) (esperado: 200)",
+            "url": "http://localhost:4566/evidencias-ucc",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": "FQoGZXIvYXdzEBYaDELjxk2P2izYv25mkq7orcPZLB8esuF9lfPh7B9XfxhBmutwTVRHpTF4U035C9K4FlG6NAQeUB6a/3BPJM01c/4fSQG8bdQEIXo4pKdAPcH4uwkDzZcmhHFXLTEKs29Kuh/olgJwkpzyxGNVLfJJ2+aKI9ZYXBiLqjT0gGShtoB26lI1hs5+moSB4wcQaIcd5kJarcZh/Iq/+dlIE00JhqtRr0I45oWJQwugrVXfqWGFGcFZ/xqIdbPwKMB+XD4w7fHdQoPHZMMu9ixDRZEgxVcOAGWqlPDi/GHzRBDlc5sW/mBC1AaX0dd4h8QdMaDpVob2KTAWb1PHavy34gQ=",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Content-SHA256",
+                "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=ASIAQAAAAAAAL34JQVOD/20260101/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=ff07f8107177cc3460051d0c3e2e0b0b49efc46ea8d48413f02a0b01581246fc",
+                "enabled": true
+              }
+            ],
+            "queryParams": [
+              {
+                "name": "list-type",
+                "value": "2",
+                "enabled": true
+              }
+            ],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "none"
+            }
+          },
+          {
+            "id": "caso-13",
+            "name": "13. EDITOR: subir evidencia_http_editor.txt (PERMITIDO -> 200) (esperado: 200)",
+            "url": "http://localhost:4566/evidencias-ucc/evidencia_http_editor.txt",
+            "method": "PUT",
+            "headers": [
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": "FQoGZXIvYXdzEBYaDELjxk2P2izYv25mkq7orcPZLB8esuF9lfPh7B9XfxhBmutwTVRHpTF4U035C9K4FlG6NAQeUB6a/3BPJM01c/4fSQG8bdQEIXo4pKdAPcH4uwkDzZcmhHFXLTEKs29Kuh/olgJwkpzyxGNVLfJJ2+aKI9ZYXBiLqjT0gGShtoB26lI1hs5+moSB4wcQaIcd5kJarcZh/Iq/+dlIE00JhqtRr0I45oWJQwugrVXfqWGFGcFZ/xqIdbPwKMB+XD4w7fHdQoPHZMMu9ixDRZEgxVcOAGWqlPDi/GHzRBDlc5sW/mBC1AaX0dd4h8QdMaDpVob2KTAWb1PHavy34gQ=",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Content-SHA256",
+                "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=ASIAQAAAAAAAL34JQVOD/20260101/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-security-token, Signature=5af9a72a7e87ba9c1d80a4d1c71a4c95d452d83cc1946597e7809c5e86a7a03d",
+                "enabled": true
+              }
+            ],
+            "queryParams": [],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "none"
+            }
+          },
+          {
+            "id": "caso-14",
+            "name": "14. ADMIN: comprobar que el archivo del Editor SI esta (esperado: 200)",
+            "url": "http://localhost:4566/evidencias-ucc",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Content-SHA256",
+                "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=AKIAQAAAAAAAB4YMYIV5/20260101/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=d11adc3361fd1ac8c8244a3e5f5d6ca4c316c346dfdd33f84d8330d540f96a9a",
+                "enabled": true
+              }
+            ],
+            "queryParams": [
+              {
+                "name": "list-type",
+                "value": "2",
+                "enabled": true
+              }
+            ],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "none"
+            }
+          },
+          {
+            "id": "caso-15",
+            "name": "15. ADMIN: borrar el archivo temporal del Editor (esperado: 200/204)",
+            "url": "http://localhost:4566/evidencias-ucc/evidencia_http_editor.txt",
+            "method": "DELETE",
+            "headers": [
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Content-SHA256",
+                "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=AKIAQAAAAAAAB4YMYIV5/20260101/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=37110f86354f9122bd029899f9bfb97e162f8d53023da33604a6eaa5a81bafd1",
+                "enabled": true
+              }
+            ],
+            "queryParams": [],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "none"
+            }
+          },
+          {
+            "id": "caso-16",
+            "name": "16. ADMIN: estado final (solo los 2 archivos del trabajo) (esperado: 200)",
+            "url": "http://localhost:4566/evidencias-ucc",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "X-Amz-Date",
+                "value": "20260101T000000Z",
+                "enabled": true
+              },
+              {
+                "name": "X-Amz-Content-SHA256",
+                "value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "enabled": true
+              },
+              {
+                "name": "Authorization",
+                "value": "AWS4-HMAC-SHA256 Credential=AKIAQAAAAAAAB4YMYIV5/20260101/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=d11adc3361fd1ac8c8244a3e5f5d6ca4c316c346dfdd33f84d8330d540f96a9a",
+                "enabled": true
+              }
+            ],
+            "queryParams": [
+              {
+                "name": "list-type",
+                "value": "2",
+                "enabled": true
+              }
+            ],
+            "pathParams": [],
+            "auth": {
+              "type": "none"
+            },
+            "body": {
+              "type": "none"
+            }
+          }
+        ]
+      }
+    ],
+    "drafts": [],
+    "environments": []
+  }
+}

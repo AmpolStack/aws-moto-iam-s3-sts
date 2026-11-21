@@ -1,0 +1,5 @@
+﻿===== 4.6 - Politica SoloLectura =====
+COMANDO: aws iam put-role-policy --role-name RolLector --policy-name SoloLectura ...
+FECHA: 2026-11-21 00:23:54
+
+

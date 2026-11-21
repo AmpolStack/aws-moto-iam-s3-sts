@@ -1,0 +1,9 @@
+﻿===== 4.8 - Politicas del Editor =====
+COMANDO: aws iam list-role-policies --role-name RolEditor
+FECHA: 2026-11-21 00:24:00
+
+{
+    "PolicyNames": [
+        "LecturaEscritura"
+    ]
+}

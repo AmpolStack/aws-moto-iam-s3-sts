@@ -1,0 +1,22 @@
+# Proveedor AWS simulado para el trabajo final: Moto (open source, gratis, Docker).
+# Por que Moto y no LocalStack? LocalStack Community no evalua politicas IAM en
+# tiempo de ejecucion (ENFORCE_IAM es de pago) y la version actual exige token.
+# Moto si autoriza cada llamada contra las politicas de los roles asumidos, por lo
+# que la prueba "Lector no puede escribir" devuelve un AccessDenied real.
+services:
+  aws-moto:
+    build: .
+    image: final-cloud-moto:5.2.5
+    container_name: aws-moto-final-cloud
+    ports:
+      - "4566:4566"                 # endpoint compatible con AWS CLI / SDK
+    environment:
+      - INITIAL_NO_AUTH_ACTION_COUNT=3
+      - MOTO_ACCOUNT_ID=000000000000
+    # No usar GET / como healthcheck: Moto intentaria autorizarlo y consumiria
+    # el contador de llamadas sin autenticar del bootstrap.
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; s=socket.create_connection(('127.0.0.1',4566),2); s.close()"]
+      interval: 5s
+      timeout: 5s
+      retries: 20

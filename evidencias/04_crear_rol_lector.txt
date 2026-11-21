@@ -1,0 +1,27 @@
+﻿===== 4.6 - Crear rol RolLector =====
+COMANDO: aws iam create-role --role-name RolLector --assume-role-policy-document file://iam/trust.json
+FECHA: 2026-11-21 00:23:52
+
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "RolLector",
+        "RoleId": "AROAQAAAAAAAMW56PQYPT",
+        "Arn": "arn:aws:iam::000000000000:role/RolLector",
+        "CreateDate": "2026-11-21T05:23:52.795862Z",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "AWS": "*"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        },
+        "MaxSessionDuration": 3600,
+        "RoleLastUsed": {}
+    }
+}

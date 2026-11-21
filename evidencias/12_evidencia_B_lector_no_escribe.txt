@@ -1,0 +1,15 @@
+﻿===== 4.10 - EVIDENCIA B: Lector no escribe =====
+COMANDO: aws s3 cp prueba_lector.txt s3://evidencias-ucc/prueba_lector.txt  (credenciales del Lector)
+FECHA: 2026-11-21 00:24:05
+
+upload failed: .\prueba_lector.txt to s3://evidencias-ucc/prueba_lector.txt An error occurred 
+(AccessDenied) when calling the PutObject operation: Access Denied
+Completed 30 Bytes/30 Bytes (731 Bytes/s) with 1 file(s) remaining
+
+--- Identidad AWS usada (STS) ---
+{
+    "UserId": "AROAQAAAAAAAMW56PQYPT:SesionLector",
+    "Account": "000000000000",
+    "Arn": "arn:aws:sts::000000000000:assumed-role/RolLector/SesionLector"
+}
+

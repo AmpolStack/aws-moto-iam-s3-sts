@@ -1,0 +1,9 @@
+﻿===== 4.4 - Identidad del perfil =====
+COMANDO: aws sts get-caller-identity
+FECHA: 2026-11-21 00:23:45
+
+{
+    "UserId": "ji5l4f32qtlrbjzjr4an",
+    "Account": "000000000000",
+    "Arn": "arn:aws:iam::000000000000:user/admin"
+}

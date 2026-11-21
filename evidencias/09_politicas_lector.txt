@@ -1,0 +1,9 @@
+﻿===== 4.8 - Politicas del Lector =====
+COMANDO: aws iam list-role-policies --role-name RolLector
+FECHA: 2026-11-21 00:23:58
+
+{
+    "PolicyNames": [
+        "SoloLectura"
+    ]
+}

@@ -1,0 +1,18 @@
+# Documento base y cualquier material privado (no se publica)
+*.pdf
+pdf_text.txt
+
+# Estado generado en cada ejecucion (credenciales temporales)
+.tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Docker / editores / sistema operativo
+.localstack/
+*.log
+.DS_Store
+Thumbs.db

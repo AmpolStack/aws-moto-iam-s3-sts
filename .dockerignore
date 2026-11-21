@@ -1,0 +1,4 @@
+# La imagen solo necesita el Dockerfile: instala Moto desde pip.
+# Asi el PDF y el resto de archivos del proyecto no se envian al daemon.
+*
+!Dockerfile

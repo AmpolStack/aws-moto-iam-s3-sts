@@ -1,0 +1,16 @@
+﻿RESUMEN DE VERIFICACION - 2026-11-21 00:24:15
+
+OK    - AWS CLI apunta al emulador (cuenta 000000000000)
+OK    - El bucket contiene archivo_lectura.txt
+OK    - Ambos roles IAM existen
+OK    - RolLector tiene la politica SoloLectura
+OK    - RolEditor tiene la politica LecturaEscritura
+OK    - STS entrego credenciales temporales al Lector
+OK    - Evidencia A: el Lector puede listar/leer el bucket
+OK    - Evidencia B: escritura del Lector denegada (AccessDenied real)
+OK    - STS entrego credenciales temporales al Editor
+OK    - El Editor puede listar/leer el bucket
+OK    - Evidencia C: el Editor puede subir archivos
+OK    - Evidencia D: el bucket contiene los dos archivos
+OK    - El archivo denegado al Lector NO esta en el bucket
+

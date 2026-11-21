@@ -1,0 +1,6 @@
+﻿===== 4.5 - Subir archivo inicial =====
+COMANDO: aws s3 cp archivo_lectura.txt s3://evidencias-ucc/
+FECHA: 2026-11-21 00:23:49
+
+Completed 51 Bytes/51 Bytes (3.5 KiB/s) with 1 file(s) remaining
+upload: .\archivo_lectura.txt to s3://evidencias-ucc/archivo_lectura.txt

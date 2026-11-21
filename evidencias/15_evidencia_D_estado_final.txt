@@ -1,0 +1,6 @@
+﻿===== 4.12 - EVIDENCIA D: estado final del bucket =====
+COMANDO: aws s3 ls s3://evidencias-ucc/
+FECHA: 2026-11-21 00:24:15
+
+2026-11-21 00:23:49         51 archivo_lectura.txt
+2026-11-21 00:24:13         36 evidencia_subida.txt

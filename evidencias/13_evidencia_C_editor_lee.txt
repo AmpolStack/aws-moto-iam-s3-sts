@@ -1,0 +1,13 @@
+﻿===== 4.11 - Editor lee =====
+COMANDO: aws s3 ls s3://evidencias-ucc/  (credenciales del Editor)
+FECHA: 2026-11-21 00:24:10
+
+2026-11-21 00:23:49         51 archivo_lectura.txt
+
+--- Identidad AWS usada (STS) ---
+{
+    "UserId": "AROAQAAAAAAALX2YZWYRI:SesionEditor",
+    "Account": "000000000000",
+    "Arn": "arn:aws:sts::000000000000:assumed-role/RolEditor/SesionEditor"
+}
+

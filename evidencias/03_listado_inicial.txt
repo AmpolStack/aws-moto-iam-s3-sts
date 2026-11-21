@@ -1,0 +1,5 @@
+﻿===== 4.5 - Listado inicial del bucket =====
+COMANDO: aws s3 ls s3://evidencias-ucc/
+FECHA: 2026-11-21 00:23:50
+
+2026-11-21 00:23:49         51 archivo_lectura.txt

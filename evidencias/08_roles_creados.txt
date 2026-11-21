@@ -1,0 +1,8 @@
+﻿===== 4.8 - Roles creados =====
+COMANDO: aws iam list-roles --query Roles[].RoleName
+FECHA: 2026-11-21 00:23:57
+
+[
+    "RolEditor",
+    "RolLector"
+]

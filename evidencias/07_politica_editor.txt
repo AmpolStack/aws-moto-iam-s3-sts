@@ -1,0 +1,5 @@
+﻿===== 4.7 - Politica LecturaEscritura =====
+COMANDO: aws iam put-role-policy --role-name RolEditor --policy-name LecturaEscritura ...
+FECHA: 2026-11-21 00:23:56
+
+

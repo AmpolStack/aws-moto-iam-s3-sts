@@ -1,0 +1,27 @@
+﻿===== 4.7 - Crear rol RolEditor =====
+COMANDO: aws iam create-role --role-name RolEditor --assume-role-policy-document file://iam/trust.json
+FECHA: 2026-11-21 00:23:55
+
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "RolEditor",
+        "RoleId": "AROAQAAAAAAALX2YZWYRI",
+        "Arn": "arn:aws:iam::000000000000:role/RolEditor",
+        "CreateDate": "2026-11-21T05:23:55.241540Z",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "AWS": "*"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        },
+        "MaxSessionDuration": 3600,
+        "RoleLastUsed": {}
+    }
+}

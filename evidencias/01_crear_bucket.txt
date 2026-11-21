@@ -1,0 +1,7 @@
+﻿===== 4.5 - Crear bucket privado =====
+COMANDO: aws s3api create-bucket --bucket evidencias-ucc
+FECHA: 2026-11-21 00:23:47
+
+{
+    "Location": "/evidencias-ucc"
+}

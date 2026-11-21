@@ -1,0 +1,14 @@
+﻿===== 4.11 - EVIDENCIA C: Editor escribe =====
+COMANDO: aws s3 cp evidencia_subida.txt s3://evidencias-ucc/evidencia_subida.txt  (credenciales del Editor)
+FECHA: 2026-11-21 00:24:13
+
+Completed 36 Bytes/36 Bytes (2.6 KiB/s) with 1 file(s) remaining
+upload: .\evidencia_subida.txt to s3://evidencias-ucc/evidencia_subida.txt
+
+--- Identidad AWS usada (STS) ---
+{
+    "UserId": "AROAQAAAAAAALX2YZWYRI:SesionEditor",
+    "Account": "000000000000",
+    "Arn": "arn:aws:sts::000000000000:assumed-role/RolEditor/SesionEditor"
+}
+
